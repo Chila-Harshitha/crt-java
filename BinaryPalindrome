@@ -1,0 +1,65 @@
+Given an integer n, write a program that returns "yes" if binary representation of n is palindrome else return "no".
+
+Input Format
+
+Read a number
+
+Constraints
+
+1<=n<=10000
+
+Output Format
+
+print yes or no
+
+Sample Input 0
+
+9
+Sample Output 0
+
+yes
+Explanation 0
+
+9 binary value is 1001
+1001 is palindrome that's why output is "yes"
+
+Sample Input 1
+
+123
+Sample Output 1
+
+no
+Explanation 1
+
+123 binary value is 1111011
+That's why output is "no"
+==============================================================================================================
+import java.io.*;
+import java.util.*;
+public class Solution {
+​
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int d,binNo=0,base=1;
+        while(n>0){
+            d=n%2;
+            n=n/2;
+            binNo=binNo+base*d;
+            base=base*10;
+        }
+        int t=binNo,rev=0;
+        while(t>0){
+            int d1=t%10;
+            rev=rev*10+d1;
+            t=t/10;
+
+        }
+        if(rev==binNo)
+            System.out.print("yes");
+
+        else
+            System.out.print("no");
+       }
+}
