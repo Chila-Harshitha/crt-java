@@ -1,0 +1,56 @@
+Write a program to calculate the sum of primes present in the digits of the given number.
+
+Input Format
+
+The input contains an integer N
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print sum of primes in the digits of the given number
+
+Sample Input 0
+
+333
+Sample Output 0
+
+9
+Sample Input 1
+
+345
+Sample Output 1
+
+8
+==========================================================================================================================================
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+static int isPrime(int n){
+    int c=0;
+    for(int i=1;i<=n;i++){
+        if(n%i==0)
+            c++;
+    }
+    if(c==2)
+        return n;
+    else
+        return 0;
+}
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        int num=s.nextInt();
+        int d,sum=0;
+        while(num>0)
+        {
+            d=num%10;
+            num=num/10;
+            sum=sum+isPrime(d);
+        }
+        System.out.print(sum);
+    }
+}
