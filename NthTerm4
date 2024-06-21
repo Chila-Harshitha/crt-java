@@ -1,0 +1,51 @@
+Given a number N, write a program to find the Nth term of the below-mentioned series. 14, 28, 20, 40, 32, 64, 56, 112, 104, 208.....
+
+Input Format
+
+Read n value
+
+Constraints
+
+1<=n<=10000
+
+Output Format
+
+Print nth term
+
+Sample Input 0
+
+2
+Sample Output 0
+
+28
+Sample Input 1
+
+10
+Sample Output 1
+
+208
+=============================================================================================
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int k=14,j=0,res=0;
+        for(int i=0;i<n;i++){
+            if(i%2==0){
+                res=k;
+               }
+            else{
+                res=2*k;
+                int l=(int)Math.pow(2,j);
+                k=k+6*l;
+                j++;
+            }
+        }
+        System.out.println(res);
+    }
+}
