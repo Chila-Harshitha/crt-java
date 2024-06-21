@@ -33,18 +33,20 @@ public class Solution {
 
     public static void main(String[] args) {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        Scanner s=new Scanner(System.in);
-        int n,k,i,c=0,res;
+                Scanner s=new Scanner(System.in);
+        int n,k,i,c=0;
         n=s.nextInt();
         k=s.nextInt();
         for(i=n;i>0;i--){
             if(n%i==0)
                 c++;
             if(c==k){
-                res=i;
                 break;
             }
         }
-        System.out.println(i);
+        if(c!=k)
+        System.out.println(1);
+        else
+            System.out.println(i);
     }
 }
