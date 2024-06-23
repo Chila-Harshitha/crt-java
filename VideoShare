@@ -1,0 +1,44 @@
+“VideoShare” is an online video sharing platform. The company has decided to rate its users channels based on the sum total of the number of views received online and the subscribers. The sum total is reffered to as user points. The rating will be given according to the below charts:
+
+User points ratings: 30-50 Average 51-60 Good 61-80 Excellent 81-100 Outstanding
+
+The whole process is automated and it can be carried out by the company’s system.
+
+Input Format
+
+The input consists of an integer userpoints representing the calculated points
+
+Constraints
+
+30>= userpoints <=100
+
+Output Format
+
+Print rating if not possible print "Invalid Input"
+
+Sample Input 0
+
+77
+Sample Output 0
+======================================================================================================
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        if(n>=30&&n<=50)
+            System.out.print("Average");
+        else if(n>50&&n<=60)
+            System.out.print("Good");
+        else if(n>60&&n<=80)
+            System.out.print("Excellent");
+        else if(n>80&&n<=100)
+            System.out.print("Outstanding");
+        else
+            System.out.print("Invalid Input");
+    }
+}
