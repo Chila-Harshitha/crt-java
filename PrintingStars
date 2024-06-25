@@ -1,0 +1,64 @@
+Printing Stars in Hollow Left Triangle Shape
+
+Input Format
+
+Read n value
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Printing Stars in Hollow Left Triangle Shape
+
+Sample Input 0
+
+5
+Sample Output 0
+
+* 
+* * 
+*   * 
+*     * 
+* * * * * 
+Sample Input 1
+
+7
+Sample Output 1
+
+* 
+* * 
+*   * 
+*     * 
+*       * 
+*         * 
+* * * * * * * 
+Submissions: 107
+Max Score: 0
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+ ======================================================================================================================================
+import java.io.*;
+import java.util.*;
+​
+public class Solution {
+​
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n;j++){
+                if(i==n||i==j||j==1)
+                    System.out.print("* ");
+                else
+                    System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
