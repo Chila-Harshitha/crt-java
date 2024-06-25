@@ -1,0 +1,71 @@
+Write a program to find the sum of elements in each row and column and also to find the greatest sum in rows and columns.
+
+Input Format
+
+Read size of rows and columns Read elements for matrix
+
+Constraints
+
+1<=n<10^7
+
+Output Format
+
+Print sum of rows in first line Print highest row no in next line Print sum of columns in next line Print highest column no in next line
+
+Sample Input 0
+
+3
+3
+1 6 8
+2 5 1
+3 8 2
+Sample Output 0
+
+15 8 13
+Row 1
+6 19 11
+Column 2
+===========================================================================================================================================
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        int m,n,r=0,max=0;
+        m=s.nextInt();
+        n=s.nextInt();
+        int a[][]=new int[m][n];
+        for(int i=0;i<m;i++)
+            for(int j=0;j<n;j++)
+                a[i][j]=s.nextInt();
+        for(int i=0;i<m;i++){
+            int sum=0;
+            for(int j=0;j<n;j++){
+                sum+=a[i][j];
+            }
+            System.out.print(sum+" ");
+            if(sum>max){
+                max=sum;
+                r=i;
+            }
+        }
+        System.out.println("\nRow "+(r+1));
+        max=0;
+        int c=0;
+        for(int i=0;i<n;i++){
+           int sum=0;
+            for(int j=0;j<m;j++){
+                sum+=a[j][i];
+            }
+            System.out.print(sum+" ");
+            if(sum>max){
+                max=sum;
+                c=i;
+            }
+        }
+        System.out.print("\nColumn "+(c+1));
+    }
+}
