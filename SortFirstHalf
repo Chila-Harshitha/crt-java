@@ -1,0 +1,23 @@
+Given an array ,sort its half of the elements,IF the array length is odd,then consider middle element in the first of array
+==================================================================================================================================
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int n=s.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        a[i]=s.nextInt();
+        int k;
+        if(n%2!=0)
+        k=(n/2)+1;
+        else
+        k=n/2;
+        for(int i=0;i<k-1;i++){
+            for(int j=i+1;j<k;j++){
+                if(a[j]<a[i]){
+                    int t=a[i];
+                    a[i]=a[j];
+                    a[j]=t;
+    }
+}
