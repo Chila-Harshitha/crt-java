@@ -1,7 +1,7 @@
 import java.util.*;
 class ArrayRotation4{
     public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);
+         Scanner s=new Scanner(System.in);
         int n=s.nextInt();
         int a[]=new int[n];
         int j=0;
@@ -9,13 +9,13 @@ class ArrayRotation4{
         a[j]=s.nextInt();
         int k=s.nextInt();
         int r;
-        for(r=0;r<n-k;r++)
+        for(r=0;r<k;r++)
         {
        int t=a[n-1];
        for(j=n-1;j>0;j--){
            a[j]=a[j-1];
        }
-       a[0]=t;
+       a[i]=t;
     }
         for(j=0;j<n;j++)
         System.out.print(a[j]+" ");
