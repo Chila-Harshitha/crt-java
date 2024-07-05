@@ -1,0 +1,58 @@
+Write a program to display the characters in prime position of a given string.
+
+Input Format
+
+Read a string
+
+Constraints
+
+string
+
+Output Format
+
+Print prime position characters
+
+Sample Input 0
+
+Computer
+Sample Output 0
+
+omue
+Sample Input 1
+
+Characters in Prime Position
+Sample Output 1
+
+haat nies
+==========================================================================================================
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static boolean isPrime(int n){
+        int f=0;
+        if((n+1)==1)
+            f=1;
+        for(int i=2;i<n;i++)
+        {
+            if((n+1)%i==0){
+                f=1;
+                break;
+            }
+        }
+        if(f==0)
+            return true;
+        else
+            return false;
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        String s1=s.nextLine();
+        for(int i=0;i<s1.length();i++){
+            if(isPrime(i))
+                System.out.print(s1.charAt(i));
+        }
+    }
+}
