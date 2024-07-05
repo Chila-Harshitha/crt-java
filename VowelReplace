@@ -1,0 +1,49 @@
+A group of people are playing a game based on vowels. If a person among them says a word or sentence others should tell the word immediately. Where while telling the word they just want to replace each vowel with the next immediate vowel lexicographical order i.e. 'a’ will be replaced by ‘e’, ‘e’ will be replaced by ‘i’, ‘i’ will be replaced by ‘o’, ‘o’ will be replaced by ‘u’, ‘u’ will be replaced by ‘a’. The person who says the word first with the mentioned changes is the winner of the game. Sonu is failing all the time. He is good in English but he couldn't do it properly for a lengthy sentence. Help him to win the game by writing a program implementing the same.
+
+Input Format
+
+Read a string
+
+Constraints
+
+string
+
+Output Format
+
+print output
+
+Sample Input 0
+
+I am a legend
+Sample Output 0
+
+I em e ligind
+=========================================================================================
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner s=new Scanner(System.in);
+        String str=s.nextLine();
+        String s2="";
+        for(int i=0;i<str.length();i++){
+            char c=str.charAt(i);
+            if(c=='a')
+                s2=s2+"e";
+            else if(c=='e')
+                s2=s2+"i";
+            else if(c=='i')
+                s2=s2+"o";
+            else if(c=='o')
+                s2=s2+"u";
+            else if(c=='u')
+                s2=s2+"a";
+            else
+                s2=s2+c;
+        }
+        System.out.print(s2);
+    }
+}
